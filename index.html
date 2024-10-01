@@ -18,7 +18,7 @@
       crossorigin="anonymous"
     />
     <!--CSS-styles-->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="static/styles.css" />
     <!--Font-Awesome-->
     <link
       rel="stylesheet"
@@ -44,43 +44,128 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <style>
+      #first{
+        background-image: url("images/wp.jpg");
+      }
+      .logo{
+        display: flex;
+        justify-content: left;
+        color: rgb(69, 37, 16);
+        margin-left: 45px;
+        margin-top: 0px;
+        position: relative;
+    }
+    .img1{
+        width: 45px;
+        height: auto;
+        margin-top: 0px;
+        display: inline-block;
+        position: absolute;
+    }
+    span{
+        font-size: 44px;
+    }
+        
+    #questhive{
+        position: absolute;
+        margin-top: 0px;
+        font-size: 28px;
+        color:rgb(69, 37, 16) ;
+        font-weight: bold;
+    }
+    .head{
+        position: relative;
+        font-size: 14px;
+        font-weight: bolder;
+        float: left;
+        margin-left: 40px;
+        margin-top:45px;
+        color: rgb(69, 37, 16);
+    }
+    .f0{
+        float: right;
+        padding-top:18px;
+        margin-right: 20px;
+        color: #1e1b18;
+        position: relative ;
+        text-decoration:none;
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 1250px;
+        color: rgb(69, 37, 16);
+    }
+    .f0:hover{
+        text-decoration:underline;
+        color:rgb(69, 37, 16);
+    }
+    .about{
+        position: absolute ;
+        top: 18px;
+        right: 400px;
+        text-decoration:none;
+        font-size: 20px;
+        font-weight: bold;
+        color:rgb(69, 37, 16);
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .contact{
+      position: absolute ;
+      top: 18px;
+      right: 200px;
+      text-decoration:none;
+      font-size: 20px;
+      font-weight: bold;
+      color:rgb(69, 37, 16);
+      
+    }
+    .about:hover{
+      text-decoration:underline;
+      color:rgb(69, 37, 16);
+    }
+    .contact:hover{
+      text-decoration:underline;
+      color:rgb(69, 37, 16);
+    }
+    .qg{
+      font-size: 50px;
+      display: inline-block;
+      position: absolute;
+      top: 180px;
+      right: 250px;
+      color: rgb(93, 77, 67);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .h3{
+      position: relative;
+      right: 300px;
+      font-size: 4rem;
+      color: #6c5c3b;
+    }
+    
+    </style>
   </head>
 
 
 
 <body>
     <section id="first">
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-dark">
-              <a class="navbar-brand" href="">Questhive</a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#second" style="color: black;">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#fifth" style="color: black;">Contact us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="login.php" style="color: white;">Login</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
+      <img class="img1" src="images/image2.png" alt="text">
+      <div class="logo">
+
+        <h3 id="questhive"><span>Q</span>uesthive</h3>
+        <h4 class="head">Learn to lead</h4>
+        <div class="game">
+            <a class="f0" href="login.php" >Login</a>
+        </div>
+      </div>
+      <a href="#second" class="about">About</a>
+      <a href="#fifth" class="contact">Contact us</a>
+      <h1 class="qg">Questions Generator !</h1>
+
     </section>
     <section id="second">
-      <img class="img" src="images/plant.png" alt="" width="750px" height="605">
+      <img class="img" src="images/image2.png" alt="" width="650px" height="705">
       <div class="writes">
         <h3>About</h3>
         <br>
@@ -92,7 +177,7 @@
 
     <section id="third">
       <div class="align">
-        <h3>Why use our Serivies ?</h3>
+        <h3 class="h3">Why use our Services ?</h3>
       </div>
       <div class="row">
         <div class="feature-box col-lg-4">
