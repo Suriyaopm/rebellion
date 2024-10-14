@@ -1,0 +1,209 @@
+<?php
+function run_python_script($num_easy, $num_medium, $num_difficult) {
+    $command = escapeshellcmd("python3 py_files/generate_coding.py $num_easy $num_medium $num_difficult");
+    $output = shell_exec($command);
+    return json_decode($output, true);
+}
+
+$num_easy = isset($_POST['easy']) ? (int)$_POST['easy'] : 0;
+$num_medium = isset($_POST['medium']) ? (int)$_POST['medium'] : 0;
+$num_difficult = isset($_POST['difficult']) ? (int)$_POST['difficult'] : 0;
+
+$selected_questions = run_python_script($num_easy, $num_medium, $num_difficult);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Coding Questions</title>
+
+    <style>
+        body{
+    background-color: antiquewhite;
+    color: #442c14;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        h1{
+            font-size: 38px;
+            text-align: center;
+        
+            padding: 75px 400px;
+            width: 50%;
+
+        }
+        .hed{
+            margin-top: 10px;
+            position: relative;
+        }
+        #generated-content{
+            font-size: 20px;
+        }
+        button{
+            padding: 10px;
+            width:15%;
+            color: rgb(210, 236, 236);
+            background-color: #442c14;
+            text-transform: capitalize;
+            font-size: 16px;
+            
+        }
+        button:hover{
+            background-color: #8c6843;
+        }
+        a{
+            color: #442c14;
+            font-size: 20px;  
+            float: left;
+            padding: 20px;
+            
+        }
+        
+        
+        a:hover{
+            color: #ca9764;
+        }
+        .logo{
+            display: flex;
+            justify-content: space-between;
+            color: rgb(69, 37, 16);
+            margin-left: -10px;
+            margin-bottom: 200px;
+            position:absolute;
+            
+        }
+
+        .img{
+            width: 55px;
+            height: 65px;
+            margin-top: 0px;
+            padding: 0px;
+            margin-right: 20px;
+            
+        }
+        #questhive{
+            position: absolute;
+            margin-top: 0px;
+        }
+        span{
+            font-size: 44px;
+        }
+        h3{
+            font-size: 28px;
+            margin-left: 53px;
+            
+        }
+        .game{
+            
+            float: right;
+            margin-left: 1150px;
+            padding: 0px;
+            font-size: 24px
+        }
+        .head{
+            position: relative;
+        }
+
+        h4{
+            font-size: 16px;
+            font-weight: bolder;
+            float: left;
+            margin-left: 40px;
+            margin-top:45px;
+        }
+
+        #back
+        {
+            margin-left: 1200px;
+            float: right;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img class="img" src="images/image2.png" alt="text">
+        <h3 id="questhive"><span>Q</span>uesthive</h3>
+        <h4 class="head">Learn to lead</h4> 
+       
+    
+    <a href="coding.php" id="back">Back</a></div>
+    
+    <h1 style="margin-top: 0px;">Generated Coding Questions</h1>
+    
+
+    <?php if (!empty($selected_questions)) : ?>
+        <div id="generated-content">
+            <?php foreach ($selected_questions as $difficulty => $questions_list) : ?>
+                <h2><?php echo ucfirst($difficulty); ?> Questions:</h2>
+                <ol>
+                    <?php foreach ($questions_list as $question) : ?>
+                        <li><?php echo htmlspecialchars($question); ?></li>
+                    <?php endforeach; ?>
+                </ol>
+            <?php endforeach; ?>
+        </div>
+    <?php else : ?>
+        <p>No questions were generated.</p>
+    <?php endif; ?>
+    
+    <div id="buttons">
+        <button onclick="printPage()">Print</button>
+        <button onclick="downloadPDF()">Download as PDF</button>
+        <button onclick="downloadExcel()">Download as Excel</button>
+        <button onclick="downloadCSV()">Download as CSV</button>
+        <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div>
+
+    <a href="coding.php">Generate More Questions</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script>
+        function printPage() {
+            window.print();
+        }
+
+        function downloadPDF() {
+            const content = document.getElementById('generated-content').innerHTML;
+            const opt = {
+                margin: 1,
+                filename: 'GeneratedCodingQuestions.pdf',
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().from(content).set(opt).save();
+        }
+
+        function downloadExcel() {
+            const table = document.createElement('table');
+            table.innerHTML = document.getElementById('generated-content').innerHTML;
+
+            const sheet = XLSX.utils.table_to_sheet(table);
+            const workbook = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(workbook, sheet, 'Coding Questions');
+
+            XLSX.writeFile(workbook, 'GeneratedCodingQuestions.xlsx');
+        }
+
+        function downloadCSV() {
+            const content = document.getElementById('generated-content').innerText;
+            const blob = new Blob([content], { type: 'text/csv' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'GeneratedCodingQuestions.csv';
+            link.click();
+        }
+
+        function copyToClipboard() {
+            const content = document.getElementById('generated-content').innerText;
+            navigator.clipboard.writeText(content).then(function() {
+                alert('Text copied to clipboard!');
+            }, function(err) {
+                alert('Failed to copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Questhive</title>
+    <!--Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <!--BootStrap-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!--CSS-styles-->
+    <link rel="stylesheet" href="static/styles.css" />
+    <!--Font-Awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <!--BootStrap-Scripts-->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+      #first{
+        background-image: url("images/wp.jpg");
+      }
+      .logo{
+        display: flex;
+        justify-content: left;
+        color: rgb(69, 37, 16);
+        margin-left: 45px;
+        margin-top: 0px;
+        position: relative;
+    }
+    .img1{
+        width: 45px;
+        height: auto;
+        margin-top: 0px;
+        display: inline-block;
+        position: absolute;
+    }
+    span{
+        font-size: 44px;
+    }
+        
+    #questhive{
+        position: absolute;
+        margin-top: 0px;
+        font-size: 28px;
+        color:rgb(69, 37, 16) ;
+        font-weight: bold;
+    }
+    .head{
+        position: relative;
+        font-size: 14px;
+        font-weight: bolder;
+        float: left;
+        margin-left: 40px;
+        margin-top:45px;
+        color: rgb(69, 37, 16);
+    }
+    .f0{
+        float: right;
+        padding-top:18px;
+        margin-right: 20px;
+        color: #1e1b18;
+        position: relative ;
+        text-decoration:none;
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 1250px;
+        color: rgb(69, 37, 16);
+    }
+    .f0:hover{
+        text-decoration:underline;
+        color:rgb(69, 37, 16);
+    }
+    .about{
+        position: absolute ;
+        top: 18px;
+        right: 400px;
+        text-decoration:none;
+        font-size: 20px;
+        font-weight: bold;
+        color:rgb(69, 37, 16);
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .contact{
+      position: absolute ;
+      top: 18px;
+      right: 200px;
+      text-decoration:none;
+      font-size: 20px;
+      font-weight: bold;
+      color:rgb(69, 37, 16);
+      
+    }
+    .about:hover{
+      text-decoration:underline;
+      color:rgb(69, 37, 16);
+    }
+    .contact:hover{
+      text-decoration:underline;
+      color:rgb(69, 37, 16);
+    }
+    .qg{
+      font-size: 50px;
+      display: inline-block;
+      position: absolute;
+      top: 180px;
+      right: 250px;
+      color: rgb(93, 77, 67);
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .h3{
+      position: relative;
+      right: 300px;
+      font-size: 4rem;
+      color: #6c5c3b;
+    }
+    
+    </style>
+  </head>
+
+
+
+<body>
+    <section id="first">
+      <img class="img1" src="images/image2.png" alt="text">
+      <div class="logo">
+
+        <h3 id="questhive"><span>Q</span>uesthive</h3>
+        <h4 class="head">Learn to lead</h4>
+        <div class="game">
+            <a class="f0" href="login.php" >Login</a>
+        </div>
+      </div>
+      <a href="#second" class="about">About</a>
+      <a href="#fifth" class="contact">Contact us</a>
+      <h1 class="qg">Questions Generator !</h1>
+
+    </section>
+    <section id="second">
+      <img class="img" src="images/image2.png" alt="" width="650px" height="705">
+      <div class="writes">
+        <h3>About</h3>
+        <br>
+        <h5>Welcome to Questhive - Where<br>You can generate different<br>different types of questions<br>in a same platform</h5>
+        <br>
+        <p>Using Questhive, you can easily generate a variety of questions<br>on a single platform. Whether you need quiz questions, discussion<br>prompts, or trivia, Questhive simplifies the process <br>with diverse options to suit all your needs. Explore and create<br>questions effortlessly with us!</p>
+      </div>
+    </section>
+
+    <section id="third">
+      <div class="align">
+        <h3 class="h3">Why use our Services ?</h3>
+      </div>
+      <div class="row">
+        <div class="feature-box col-lg-4">
+            <img src="images/ai.png" alt="" width="300px" height="300px">
+            <h4><strong>Automation</strong></h4>
+            <p>Streamline your workflow<br>with our automated question<br>generator. Quickly produce a<br>wide range of questions<br>without manual input, saving<br>time.</p>
+        </div>
+        <div class="feature-box col-lg-4">
+          <img src="images/way.png" alt="" width="300px" height="300px">
+          <h4><strong>Easy to Use</strong></h4>
+          <p>Our interface is user-friendly,<br>allowing you to effortlessly<br>create and customize questions<br>with just a few clicks.<br>No technical skills required!<br></p>
+        </div>
+        <div class="feature-box col-lg-4">
+          <img src="images/chess.png" alt="" width="300px" height="300px">
+          <h4><strong>See the Difference</strong></h4>
+          <p>Experience the efficiency and<br>precision of automated question<br>generation. Notice improved<br>accuracy and variety in<br>questions compared to manual<br>methods.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="fourth">
+      <h3>Types of Questions</h3>
+      <div class="row">
+        <div class="pricing col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Essay-Paragraph</h3>
+            </div>
+            <div class="card-body">
+              <p>Generate Question/Answer</p>
+              <p>From Paragraph/Essay</p>
+              <p>Uses NLP, NLTK</p>
+              <p>Also provide Answer</p>
+              <button
+                type="button"
+                class="w-100 btn btn-lg btn-block btn-dark"
+              >
+                Got it
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing col-lg-4 col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Coding</h3>
+            </div>
+            <div class="card-body">            
+              <p>Generate Coding Questions</p>
+              <p>Can Select Difficulty</p>
+              <p>Uses DataSet</p>
+              <p>Generate `n` Number of Questions</p>
+              <button type="button" class="w-100 btn btn-lg btn-block btn-dark">
+                Got it
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing col-lg-4 col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h3>MCQs</h3>
+            </div>
+            <div class="card-body">            
+              <p>Generate MCQ Questions</p>
+              <p>Can Select Difficulty</p>
+              <p>Uses Generative AI (OpenAI)</p>
+              <p>Generate Questions topicwise</p>
+              <button type="button" class="w-100 btn btn-lg btn-block btn-dark">
+                Got it
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fifth">
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.386403342217!2d80.22595567499009!3d12.818289087483189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525a64a9d9fdbd%3A0xfe20d2c9e0df4861!2sAnand%20Institute%20of%20Higher%20Technology!5e0!3m2!1sen!2sin!4v1693935391505!5m2!1sen!2sin" width="550" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="content">
+        <h3>At Questhive, we invite you to<br>create an AI world<br>of technology to the future...</h3>
+        <h5>E-mail:</h5>
+        <p>clumsycoders2@gmail.com</p>
+        <h5>Phone:</h5>
+        <p>9384157873</p>
+        <h5>Address:</h5>
+        <p>Anand Institute of Higher Technology Kalasalingam Nagar, IT Corridor, Old<br>Mahablipuram Road, Kazhipattur, Chennai-603103.</p>
+      </div>
+    </section>
+      <footer id="footer">
+        <i class="social-icon fa-brands fa-facebook"></i>
+        <i class="social-icon fa-brands fa-twitter"></i>
+        <i class="social-icon fa-brands fa-instagram"></i>
+        <i class="social-icon fa-solid fa-envelope"></i>
+        <p>© Copyright Questhive</p>
+      </footer>
+</body>
+</html>
